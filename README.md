@@ -1,4 +1,4 @@
-# anothertest
+# JustDoIt
 
 ## Project setup
 ```
