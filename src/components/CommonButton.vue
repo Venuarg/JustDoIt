@@ -1,5 +1,5 @@
 <template>
-  <div :class='computedClass'> <!-- : сокращение для v-bind: -->
+  <div :class='computedClass'>
     <slot></slot>
   </div>
 </template>
@@ -8,7 +8,7 @@
 export default {
   name: "CommonButton",
   props: {
-    type: String // принимает success и danger
+    type: String
   },
   computed: {
     computedClass () {

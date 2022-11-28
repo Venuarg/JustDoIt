@@ -38,7 +38,7 @@ export default {
     if (list) {
       this.todos = JSON.parse(list)
     }
-  }, /* beforeCreate - не имеет доступа к this, т.к. this ещё не существует*/
+  },
 
   methods: {
     onToggle ({id, value}) {
@@ -67,9 +67,6 @@ export default {
         completed: false
       });
     }
-    /* filterArray (arr, id) {
-         return arr.filter(elem => elem.id !== id);
-     }  -- заменяет метод фильтер*/
   },
 
   watch: {
