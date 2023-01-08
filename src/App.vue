@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <h1>Just do it.</h1>
+    <CommonClock />
     <AddTodo
         @add-todo="addTodo"
     ></AddTodo>
@@ -18,6 +19,7 @@
 <script>
 import TodoList from '@/components/TodoList'
 import AddTodo from '@/components/AddTodo'
+import CommonClock from "@/components/CommonClock";
 
 export default {
   name: 'App',
@@ -30,7 +32,8 @@ export default {
 
   components: {
     TodoList,
-    AddTodo
+    AddTodo,
+    CommonClock
   },
 
  created () {
@@ -75,6 +78,13 @@ export default {
       handler (newValue) {
         localStorage.setItem('todo-list', JSON.stringify(newValue))
       }
+    },
+
+    date: {
+      deep: true,
+      handler (newValue) {
+        this.date = newValue
+      }
     }
   }
 }
@@ -98,5 +108,10 @@ export default {
      color: hsl(8, 60%, 92%);
      font-size: 100px;
      font-weight: 300;
+   }
+
+   .date {
+       color: hsl(8, 60%, 92%);
+       margin-bottom: 7px;
    }
 </style>
